@@ -7,7 +7,7 @@ type Props={
     searchParams:{session_id?:string; cancel?:boolean}
 }
 
-const page=({searchParms:{cancel,session_id}}:Props)=>{
+const page=async ({searchParms:{cancel,session_id}}:Props)=>{
     if(session_id){
         const customer =await completeSubscription(session_id)
         if(customer.status===200){
